@@ -11,7 +11,7 @@ STEP 1 :
 
    Also prevent the ones in the Double Quotes getting Replacd (
    
-   perl -pe 's{("[^"]+")}{($x=$1)=~tr/|/ /;$x}ge' 2015_07_22_mktplace_shop_web_log_sample.log)
+   perl -pe 's{("[^"]+")}{($x=$1)=~tr/|/ /;$x}ge' nareshnew)
 
    
 STEP 2: 
@@ -38,7 +38,7 @@ STEP 2:
 	)
 	ROW FORMAT DELIMITED FIELDS TERMINATED by '|' LINES TERMINATED by '\n' STORED as TEXTFILE;  (CAN USE PARQUET/AVRO etc)
 
-        LOAD DATA LOCAL INPATH '/home/cloudera/Desktop/2015_07_22_mktplace_shop_web_log_sample.log' into TABLE APPLICATION_DATA; 
+        LOAD DATA LOCAL INPATH '/home/cloudera/Desktop/nareshnew' into TABLE APPLICATION_DATA; 
 
 ANSWER To QUESTION 1:
 QUERY :hive> select count(RESTURL),ip_address2 from application_data where datefield like '2015-07-22T09:00:30%' GROUP BY ip_address2;
